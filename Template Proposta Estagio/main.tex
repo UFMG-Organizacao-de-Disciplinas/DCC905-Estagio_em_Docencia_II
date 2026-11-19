@@ -1,0 +1,214 @@
+% ==========================================================================
+% TEMPLATE DE PROPOSTA DE TRABALHO - ESTAGIO EM DOCENCIA (PPGCC/DCC/UFMG)
+% Estrutura exigida pelas Diretrizes (secao "Proposta de trabalho"):
+%   1. Identificacao   2. Sobre a Disciplina   3. Atividades   4. Cronograma
+%
+% COMO USAR:
+%  1) Preencha os dados nos comandos \newcommand logo abaixo.
+%  2) Leia as caixas azuis "INSTRUCAO" e substitua os textos entre
+%     colchetes [ ... ] pelo seu conteudo.
+%  3) Ao terminar, troque \mostrarinstrucoestrue por \mostrarinstrucoesfalse.
+%  4) Compile: pdflatex main (duas vezes, por causa da longtable)
+%  5) Envie ao Moodle em PDF (nome: NomeCompletoDoAluno.pdf) e avise por
+%     e-mail o coordenador da disciplina, com o professor em copia.
+% ==========================================================================
+\documentclass[12pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazilian]{babel}
+\usepackage{longtable}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{hyperref}
+\usepackage{indentfirst}
+\usepackage{enumitem}
+\usepackage{titling}
+\setlength{\droptitle}{-10em}
+\usepackage{geometry}
+\geometry{a4paper, margin=2.5cm}
+
+\definecolor{dccblue}{RGB}{20, 45, 110}
+\definecolor{instrbg}{RGB}{232, 240, 254}
+
+% ---------------------------- DADOS GERAIS ---------------------------------
+\newcommand{\NomeEstagiario}{[Nome completo do Estagiário]}
+\newcommand{\NivelEstagiario}{[Mestrando/Doutorando] em Ciência da Computação}
+\newcommand{\EstagioNivel}{[Estágio em Docência I ou II]}
+\newcommand{\NomeDisciplina}{[Nome da Disciplina]}
+\newcommand{\CodigoDisciplina}{[CODIGO]}
+\newcommand{\Turma}{[Turma]}
+\newcommand{\Horarios}{[dias da semana e horários das aulas]}
+\newcommand{\Semestre}{[AAAA/S]}
+\newcommand{\NomeProfessor}{[Nome completo do Professor Responsável]}
+\newcommand{\TituloProfessor}{[Titulação, ex.: Ph.D. em Ciência da Computação]}
+
+% ------------------ CAIXAS DE INSTRUCAO (ocultaveis) -----------------------
+\newif\ifmostrarinstrucoes
+\mostrarinstrucoestrue   % <- troque por \mostrarinstrucoesfalse na versao final
+\newcommand{\instrucao}[1]{%
+  \ifmostrarinstrucoes
+  \begin{tcolorbox}[colback=instrbg, colframe=dccblue, arc=2mm, boxrule=0.6pt,
+    title=\textbf{INSTRUÇÃO (apagar na versão final)}, fonttitle=\small]
+  \small #1
+  \end{tcolorbox}
+  \fi}
+
+\title{\textbf{\EstagioNivel{} \\ Proposta de Trabalho}}
+\author{\NomeEstagiario}
+\date{[Data de submissão]}
+
+\begin{document}
+\maketitle
+
+% ============================ 1. IDENTIFICACAO ==============================
+\section{Identificação} \label{sec:identificacao}
+\instrucao{Item 1 das Diretrizes. A proposta deve ser previamente acertada com o professor responsável pela turma à qual você foi alocado. Confira os dados na planilha oficial de alocação do semestre.}
+
+\textbf{Título:} \EstagioNivel{} --- \NomeDisciplina
+
+\textbf{Disciplina:} \NomeDisciplina
+
+\textbf{Código:} \CodigoDisciplina
+
+\textbf{Horários:} \Horarios
+
+\textbf{Professor(a) Responsável:} \NomeProfessor
+
+\textbf{Turma:} \Turma
+
+\textbf{Período:} \Semestre
+
+% ========================== 2. SOBRE A DISCIPLINA ===========================
+\section{Sobre a Disciplina} \label{sec:disciplina}
+\instrucao{Item 2 das Diretrizes: descreva a disciplina conforme o plano de ensino oficial e a condução adotada pelo professor. Consulte o plano de ensino e o professor para garantir fidelidade.}
+
+\subsection{Condução pelo professor}
+\instrucao{1 ou 2 parágrafos: modalidade (teórica, prática, teórico-prática), número de aulas semanais, uso do Moodle, laboratórios, trabalhos práticos etc.}
+[Descrição da forma de condução da disciplina.]
+
+\subsection{Ementa e Programa da Disciplina}
+\instrucao{Copie a ementa oficial e o programa detalhado (lista numerada de tópicos). Informe também curso, classificação, créditos, carga horária e objetivos.}
+\begin{itemize}
+    \item \textbf{Curso:} [curso];
+    \item \textbf{Classificação:} [Teórica / Prática / Teórico-Prática];
+    \item \textbf{Créditos:} [N];
+    \item \textbf{Carga Horária:} [N horas];
+    \item \textbf{Objetivos:} [objetivos da disciplina].
+\end{itemize}
+
+\subsubsection{Ementa}
+[Ementa oficial da disciplina.]
+
+\subsubsection{Programa Detalhado}
+\begin{enumerate}
+    \item [Tópico 1]
+    \item [Tópico 2]
+    \item [\ldots]
+\end{enumerate}
+
+\subsection{Bibliografia}
+\instrucao{Liste a bibliografia básica e complementar adotada pelo professor, no formato ABNT (ou o padrão usado pelo plano de ensino).}
+\textbf{Bibliografia Básica:}
+\begin{itemize}
+    \item [SOBRENOME, N. \textbf{Título}. Edição. Editora, ano.]
+\end{itemize}
+
+\textbf{Bibliografia Complementar:}
+\begin{itemize}
+    \item [SOBRENOME, N. \textbf{Título}. Edição. Editora, ano.]
+\end{itemize}
+
+\subsection{Formas de Avaliação}
+\instrucao{Descreva a composição da nota e as datas das avaliações. Adapte a fórmula, a tabela e a lista de datas ao plano de ensino.}
+A avaliação é composta pelos seguintes componentes:
+
+\begin{equation*}
+NF = [AV_1 + AV_2 + \ldots]
+\end{equation*}
+
+\vspace{0.3cm}
+\noindent
+\begin{tabular}{@{}p{2.7cm}p{4.1cm}p{3.6cm}p{1.8cm}@{}}
+\hline
+\textbf{Avaliação} & \textbf{Tipo} & \textbf{Valor} & \textbf{Peso} \\ \hline
+{[AV1]} & [Prova / Trabalho] & [00,00 pontos] & [0,00] \\
+{[AV2]} & [Prova / Trabalho] & [00,00 pontos] & [0,00] \\ \hline
+\multicolumn{2}{l}{\textbf{Total}} & \textbf{[100,00 pontos]} & \\
+\end{tabular}
+\vspace{0.3cm}
+
+\textbf{Datas das Avaliações:}
+\begin{itemize}
+    \item [Avaliação 1: DD/MM/AAAA]
+    \item [Avaliação 2: DD/MM/AAAA]
+\end{itemize}
+
+% ========================== 3. ATIVIDADES ===================================
+\section{Atividades do Estagiário} \label{sec:atividades}
+\instrucao{Item 3 das Diretrizes: indique as atividades e tarefas que ficarão sob sua responsabilidade. Seja específico e realista; elas serão cobradas no Relatório Final. Exemplos comuns: elaboração e correção de trabalhos ou listas, atribuição de notas, esclarecimento de dúvidas, auxílio em aulas práticas e aplicação de provas, preparação de material didático, elaboração do relatório. Edite, remova ou acrescente itens.}
+\begin{enumerate}
+    \item [Elaboração de trabalhos / listas de exercícios];
+    \item [Correção de trabalhos];
+    \item [Atribuição de notas];
+    \item [Esclarecimento de dúvidas dos alunos];
+    \item [Auxílio ao professor nas aulas práticas e aplicações de prova];
+    \item Elaboração e entrega do Relatório Final.
+\end{enumerate}
+
+% ============================ 4. CRONOGRAMA =================================
+\section{Cronograma} \label{sec:cronograma}
+\instrucao{Item 4 das Diretrizes: cronograma de aulas e avaliações do semestre, indicando sua participação ao longo do tempo. Inclua uma linha por aula ou evento (use ``---'' em feriados) e as datas de elaboração/correção dos trabalhos e de entrega do Relatório Final. Datas devem seguir o calendário acadêmico da UFMG.}
+
+\begin{longtable}{|p{2.2cm}|p{7.6cm}|p{4.7cm}|}
+\hline
+\textbf{Data} & \textbf{Evento} & \textbf{Atividade de Estágio} \\
+\hline
+\endfirsthead
+\hline
+\textbf{Data} & \textbf{Evento} & \textbf{Atividade de Estágio} \\
+\hline
+\endhead
+\hline
+\endfoot
+
+[DD/MM/AAAA] & [Aula teórica: tópico] & [Esclarecimento de dúvidas] \\
+\hline
+[DD/MM/AAAA] & [Feriado] & --- \\
+\hline
+[DD/MM/AAAA] & [Aula prática: tópico] & [Auxílio ao professor] \\
+\hline
+[DD/MM/AAAA] & [Prova escrita 1] & [Auxílio ao professor] \\
+\hline
+[DD/MM/AAAA] & [Aula teórica: tópico] & [Elaboração do Trabalho 1] \\
+\hline
+[DD/MM/AAAA] & [Monitoria / aula] & [Correção e lançamento de notas] \\
+\hline
+[DD/MM/AAAA] & [Encerramento das atividades] & [Entrega do Relatório Final] \\
+\hline
+\end{longtable}
+
+% ======================== CONSIDERACOES FINAIS ==============================
+\section{Considerações Finais}
+\instrucao{1 parágrafo: declare que a proposta foi elaborada em conformidade com o plano de ensino oficial da disciplina no período indicado e resuma o objetivo formativo do estágio.}
+Esta proposta de estágio foi elaborada em conformidade com o plano de ensino oficial da disciplina \NomeDisciplina{} (\CodigoDisciplina) oferecida no período \Semestre{} pela Universidade Federal de Minas Gerais. [Complemente com o objetivo formativo do estágio.]
+
+\vspace{2.5cm}
+\noindent
+\begin{minipage}[t]{0.48\textwidth}
+    \centering
+    \rule{\linewidth}{0.5pt} \\
+    \textbf{\NomeProfessor} \\
+    \TituloProfessor \\
+    Professor Supervisor da Disciplina
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+    \centering
+    \rule{\linewidth}{0.5pt} \\
+    \textbf{\NomeEstagiario} \\
+    \NivelEstagiario \\
+    \EstagioNivel
+\end{minipage}
+
+\end{document}

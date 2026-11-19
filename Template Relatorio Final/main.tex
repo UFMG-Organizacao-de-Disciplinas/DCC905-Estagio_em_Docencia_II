@@ -1,0 +1,299 @@
+% ==========================================================================
+% TEMPLATE DE RELATORIO FINAL - ESTAGIO EM DOCENCIA (PPGCC/DCC/UFMG)
+% Estrutura exigida pelas Diretrizes (secao "Relatorio final"):
+%   1. Disciplina/turma apoiada   2. Atividades conduzidas
+%   3. Resultados obtidos         4. Autoavaliacao
+%   5. Sugestoes para futuras ofertas
+%
+% COMO USAR:
+%  1) Preencha os dados da capa nos comandos \newcommand logo abaixo.
+%  2) Leia as caixas azuis "INSTRUCAO" em cada secao e substitua o texto
+%     entre colchetes [ ... ] pelo seu conteudo.
+%  3) Quando terminar, mude \mostrarinstrucoestrue para
+%     \mostrarinstrucoesfalse para ocultar TODAS as caixas de instrucao.
+%  4) Compile: pdflatex main; bibtex main; pdflatex main; pdflatex main
+% ==========================================================================
+\documentclass[12pt]{article}
+\usepackage[brazilian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{times}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{url}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage{longtable}
+\usepackage[most]{tcolorbox}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage[colorlinks=true, linkcolor=dccblue, citecolor=dccblue, urlcolor=dccblue]{hyperref}
+
+\definecolor{dccblue}{RGB}{20, 45, 110}
+\definecolor{instrbg}{RGB}{232, 240, 254}
+
+% ---------------------------- DADOS DA CAPA --------------------------------
+\newcommand{\Semestre}{[AAAA/S]}
+\newcommand{\NomeDisciplina}{[Nome da Disciplina apoiada]}
+\newcommand{\CodigoDisciplina}{[CODIGO]}
+\newcommand{\Turma}{[Turma]}
+\newcommand{\NomeProfessor}{[Nome completo do Professor Supervisor]}
+\newcommand{\EmailProfessor}{[email.professor@dcc.ufmg.br]}
+\newcommand{\NomeEstagiario}{[Nome completo do Estagiario]}
+\newcommand{\MatriculaEstagiario}{[Matricula UFMG]}
+\newcommand{\NivelEstagiario}{[Mestrando/Doutorando] em Ciência da Computação}
+\newcommand{\EmailEstagiario}{[email.estagiario@dcc.ufmg.br]}
+\newcommand{\EstagioNivel}{[Estágio em Docência I ou II]}
+\newcommand{\LocalData}{[Cidade, Mes de Ano]}
+
+% ------------------ CAIXAS DE INSTRUCAO (ocultaveis) -----------------------
+\newif\ifmostrarinstrucoes
+\mostrarinstrucoestrue   % <- troque por \mostrarinstrucoesfalse na versao final
+\newcommand{\instrucao}[1]{%
+  \ifmostrarinstrucoes
+  \begin{tcolorbox}[colback=instrbg, colframe=dccblue, arc=2mm, boxrule=0.6pt,
+    title=\textbf{INSTRUÇÃO (apagar na versão final)}, fonttitle=\small]
+  \small #1
+  \end{tcolorbox}
+  \fi}
+
+\begin{document}
+
+% ================================ CAPA ======================================
+\begin{titlepage}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\begin{tikzpicture}[remember picture, overlay]
+  \node[anchor=south west, inner sep=1.2cm] at (current page.south west) {
+    \includegraphics[height=1.25cm]{imgs/default/logo-ufmg.png}};
+  \node[anchor=south east, inner sep=1.2cm] at (current page.south east) {
+    \includegraphics[width=3.2cm]{imgs/default/Logo-DCC.png}};
+\end{tikzpicture}
+\center
+\textsc{\Large Universidade Federal de Minas Gerais}\\[0.2cm]
+\textsc{\large Instituto de Ciências Exatas --- ICEx}\\[0.2cm]
+\textsc{\large Departamento de Ciência da Computação --- DCC}\\[0.2cm]
+\textsc{\large Programa de Pós-Graduação em Ciência da Computação --- PPGCC}\\[0.35cm]
+\includegraphics[scale=0.45]{imgs/default/logo.png}\\[0.35cm]
+\textsc{\Large \EstagioNivel{} (\CodigoDisciplina)}\\[0.2cm]
+\textsc{\large Semestre Letivo: \Semestre}\\[0.2cm]
+\HRule \\[0.4cm]
+{\huge \bfseries Relatório Final de Atividades de Estágio em Docência: \NomeDisciplina}\\[0.3cm]
+\HRule \\[1.2cm]
+\begin{minipage}{0.48\textwidth}
+\begin{flushleft} \large
+\emph{Professor Supervisor:}\\
+\NomeProfessor\\
+\small{\texttt{\EmailProfessor}}\\
+\small{Departamento de Ciência da Computação}
+\end{flushleft}
+\end{minipage}
+~
+\begin{minipage}{0.48\textwidth}
+\begin{flushright} \large
+\emph{Estagiário em Docência:}\\
+\NomeEstagiario\\
+\small{Matrícula UFMG: \MatriculaEstagiario}\\
+\small{\NivelEstagiario}\\
+\small{\texttt{\EmailEstagiario}}
+\end{flushright}
+\end{minipage}\\[2.2cm]
+\vfill
+{\large \LocalData}
+\end{titlepage}
+
+\pagenumbering{roman}
+
+% ================================ RESUMO ====================================
+\begin{abstract}
+\instrucao{Escreva um resumo de 1 parágrafo (150 a 250 palavras): disciplina e turma apoiada, papel do estagiário, principais atividades (elaboração/correção de trabalhos, atendimento a dúvidas, apoio em aulas e provas), principais resultados quantitativos e conclusão. Inclua 3 a 6 palavras-chave.}
+\noindent [Resumo do relatório.]
+
+\vspace{0.5cm}
+\noindent \textbf{Palavras-chave:} [palavra 1], [palavra 2], [palavra 3].
+\end{abstract}
+
+\newpage
+\tableofcontents
+\newpage
+\pagenumbering{arabic}
+
+% ======================= 1. DISCIPLINA / TURMA APOIADA ======================
+\section{Identificação e Caracterização da Disciplina Apoiada}\label{sec:disciplina}
+\instrucao{Item 1 das Diretrizes: reproduza os dados da Proposta de Trabalho aprovada (identificação, condução da disciplina, ementa, bibliografia, avaliação e cronograma). O cronograma deve indicar o que foi planejado \emph{versus} o que foi efetivamente executado.}
+
+\subsection{Identificação da Disciplina e da Turma}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Disciplina:} \NomeDisciplina; \textbf{Código:} \CodigoDisciplina; \textbf{Turma:} \Turma;
+    \item \textbf{Horários:} [dias e horários das aulas];
+    \item \textbf{Carga horária / créditos:} [ex.: 60 horas, 4 créditos];
+    \item \textbf{Número de alunos matriculados:} [N];
+    \item \textbf{Professor Supervisor:} \NomeProfessor;
+    \item \textbf{Estagiário:} \NomeEstagiario.
+\end{itemize}
+
+\subsection{Condução Pedagógica pelo Professor Supervisor}
+\instrucao{Descreva em 1 ou 2 parágrafos como o professor conduz a disciplina (aulas expositivas, laboratórios, trabalhos práticos, uso do Moodle etc.).}
+[Descrição da condução da disciplina.]
+
+\subsection{Ementa e Programa}
+\instrucao{Copie a ementa oficial e liste os tópicos do programa da disciplina.}
+\begin{quote}\textit{[Ementa oficial da disciplina.]}\end{quote}
+\begin{enumerate}[noitemsep, topsep=2pt]
+    \item [Tópico 1];
+    \item [Tópico 2];
+    \item [\ldots]
+\end{enumerate}
+
+\subsection{Bibliografia da Disciplina}
+\instrucao{Liste a bibliografia básica e complementar adotada. Cadastre cada obra em \texttt{bibliografia.bib} e cite com \texttt{\textbackslash cite\{chave\}}.}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Básica:} [Autor (Título)] \cite{exemplo_livro};
+    \item \textbf{Complementar:} [Autor (Título)].
+\end{itemize}
+
+\subsection{Sistema e Critérios de Avaliação}
+\instrucao{Descreva a composição da nota da disciplina e as datas das avaliações. Adapte a tabela abaixo (linhas, valores e pesos).}
+\begin{table}[H]
+\centering\small
+\caption{Composição das Formas de Avaliação}\label{tab:avaliacoes}
+\vspace{0.2cm}
+\begin{tabular}{llcc}
+\toprule
+\textbf{Avaliação} & \textbf{Descrição} & \textbf{Valor} & \textbf{Peso} \\
+\midrule
+{[AV1]} & [Prova / Trabalho --- data] & [00,00 pts] & [0,00] \\
+{[AV2]} & [Prova / Trabalho --- data] & [00,00 pts] & [0,00] \\
+\midrule
+\textbf{Total} & & \textbf{[100,00 pts]} & --- \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Cronograma Planejado versus Executado}
+\instrucao{Inclua uma linha por aula/evento do semestre, indicando sua atuação. Marque feriados com ``---''. Informe se houve alteração em relação à Proposta de Trabalho.}
+\begin{longtable}{|p{2.2cm}|p{7.0cm}|p{5.4cm}|}
+\caption{Cronograma Semestral de Atividades de Estágio}\label{tab:cronograma}\\
+\hline
+\textbf{Data} & \textbf{Tópico / Evento} & \textbf{Atuação do Estagiário} \\ \hline
+\endfirsthead
+\hline
+\textbf{Data} & \textbf{Tópico / Evento} & \textbf{Atuação do Estagiário} \\ \hline
+\endhead
+\hline
+\endfoot
+[DD/MM/AAAA] & [Aula teórica: tópico] & [Esclarecimento de dúvidas] \\ \hline
+[DD/MM/AAAA] & [Feriado] & --- \\ \hline
+[DD/MM/AAAA] & [Prova escrita] & [Apoio na aplicação da prova] \\ \hline
+[DD/MM/AAAA] & [Encerramento do semestre] & [Entrega do Relatório Final] \\ \hline
+\end{longtable}
+
+\newpage
+% ======================== 2. ATIVIDADES CONDUZIDAS ==========================
+\section{Atividades Conduzidas pelo Estagiário}\label{sec:atividades}
+\instrucao{Item 2 das Diretrizes: descreva, de forma objetiva e verificável, cada atividade sob sua responsabilidade (as mesmas previstas na Proposta de Trabalho). Sugestão de subseções abaixo; remova as que não se aplicam e acrescente outras.}
+
+\subsection{Elaboração de Trabalhos e Avaliações}
+\instrucao{Para cada trabalho/lista/prova elaborado: objetivo pedagógico, requisitos, formato de entrega e critérios de pontuação.}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{[Trabalho 1 --- título]:} [descrição];
+    \item \textbf{[Trabalho 2 --- título]:} [descrição].
+\end{itemize}
+
+\subsection{Correção e Atribuição de Notas}
+\instrucao{Explique o método de correção (manual, automatizado, rubricas), prazos, ferramentas usadas, política de feedback e como as notas foram lançadas. Se houve verificação de integridade acadêmica, descreva a ferramenta e o critério adotado, \textbf{sem identificar alunos}.}
+[Descrição do processo de correção.]
+
+\subsection{Atendimento a Dúvidas e Monitoria}
+\instrucao{Informe a modalidade (presencial, remota ou híbrida), canais utilizados, frequência e principais temas das dúvidas.}
+[Descrição dos atendimentos.]
+
+\subsection{Apoio em Aulas e Aplicação de Provas}
+\instrucao{Liste as aulas práticas/laboratórios e provas em que você atuou, com datas e natureza do apoio.}
+\begin{itemize}[leftmargin=*]
+    \item [DD/MM/AAAA --- atividade e papel desempenhado].
+\end{itemize}
+
+\subsection{Outras Atividades}
+\instrucao{Elaboração de materiais didáticos, ambientes de teste, comunicados aos alunos etc. Remova se não houver.}
+[Outras atividades.]
+
+\newpage
+% ========================== 3. RESULTADOS OBTIDOS ===========================
+\section{Resultados Obtidos}\label{sec:resultados}
+\instrucao{Item 3 das Diretrizes: apresente evidências do resultado do seu trabalho (estatísticas da turma, evolução entre avaliações, taxa de entrega, desempenho médio, observações qualitativas). Use dados agregados --- \textbf{não inclua nomes nem matrículas de alunos}.}
+
+\subsection{Desempenho Geral da Turma}
+\begin{table}[H]
+\centering\small
+\caption{Quadro de Desempenho da Turma}\label{tab:desempenho}
+\vspace{0.2cm}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Métrica} & \textbf{[Avaliação 1]} & \textbf{[Avaliação 2]} \\
+\midrule
+Alunos matriculados & [N] & [N] \\
+Entregas / participações avaliadas & [N (\%)] & [N (\%)] \\
+Média geral & [00,00] & [00,00] \\
+Maior nota / menor nota & [00,00 / 00,00] & [00,00 / 00,00] \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Análise e Discussão}
+\instrucao{Interprete os números: dificuldades recorrentes, evolução ao longo do semestre, efeito das ações de apoio, ocorrência de recursos de nota.}
+[Análise dos resultados.]
+
+\newpage
+% =========================== 4. AUTOAVALIAÇÃO ===============================
+\section{Autoavaliação do Estagiário}\label{sec:autoavaliacao}
+\instrucao{Item 4 das Diretrizes: reflexão crítica e honesta sobre sua atuação. Sugestão de eixos: competências docentes desenvolvidas, comunicação com os alunos, gestão de tempo/conciliação com a pós-graduação, pontos fortes, pontos a melhorar e contribuição para a vocação docente. O relatório é avaliado nos critérios: cumprimento dos objetivos, qualidade do apoio, disponibilidade e assiduidade, motivação e desenvoltura.}
+\subsection{Competências Desenvolvidas}
+[Texto.]
+\subsection{Comunicação e Relacionamento com os Alunos}
+[Texto.]
+\subsection{Gestão de Tempo e Assiduidade}
+[Texto.]
+\subsection{Pontos a Melhorar e Reflexão Final}
+[Texto.]
+
+\newpage
+% =================== 5. SUGESTÕES PARA FUTURAS OFERTAS ======================
+\section{Sugestões para Futuras Ofertas da Disciplina}\label{sec:sugestoes}
+\instrucao{Item 5 das Diretrizes: proponha melhorias concretas e justificadas. Para cada sugestão, indique o diagnóstico (o que foi observado) e a recomendação (o que fazer).}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{[Sugestão 1]} --- \emph{Diagnóstico:} [observação]. \emph{Recomendação:} [ação];
+    \item \textbf{[Sugestão 2]} --- \emph{Diagnóstico:} [observação]. \emph{Recomendação:} [ação].
+\end{itemize}
+
+\newpage
+% ===================== CONSIDERAÇÕES FINAIS E ASSINATURAS ===================
+\section{Considerações Finais e Termo de Encerramento}\label{sec:conclusao}
+\instrucao{Declare que as atividades da Proposta de Trabalho foram cumpridas (ou justifique desvios), faça os agradecimentos e colete as assinaturas.}
+[Considerações finais e agradecimentos.]
+
+\vspace{2.5cm}
+\noindent
+\begin{minipage}[t]{0.48\textwidth}
+    \centering
+    \rule{\linewidth}{0.5pt}\\
+    \textbf{\NomeProfessor}\\
+    Professor Supervisor da Disciplina\\
+    Departamento de Ciência da Computação --- DCC/UFMG
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+    \centering
+    \rule{\linewidth}{0.5pt}\\
+    \textbf{\NomeEstagiario}\\
+    \EstagioNivel\\
+    PPGCC/UFMG
+\end{minipage}
+
+\newpage
+\bibliographystyle{unsrt}
+\bibliography{bibliografia}
+
+\end{document}
